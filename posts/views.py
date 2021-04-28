@@ -9,7 +9,10 @@ from .serializers import CommentSerializer, PostSerializer
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly, AuthorPermission]
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly,
+        AuthorPermission
+    ]
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
@@ -22,7 +25,10 @@ class CommentViewSet(viewsets.ModelViewSet):
         return queryset
 
     serializer_class = CommentSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly, AuthorPermission]
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly,
+        AuthorPermission
+    ]
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
