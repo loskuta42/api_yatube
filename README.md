@@ -1,5 +1,11 @@
 # api_yatube - REST API для проекта Yatube
 
+# Установка:
+после клонирования, находясь в склонированном каталоге прописать в консоли:
+pip install -r requirements.txt
+
+# Описание проекта
+
 Стек: Python 3, Django 2.2 LTS, Django REST Framework, SQLite3, Simple-JWT
 
 API доступен только аутентифицированным пользователям. В проекте аутентификация осуществляется по токену TokenAuthentication (Реализована аутентификация по JWT-токену).
